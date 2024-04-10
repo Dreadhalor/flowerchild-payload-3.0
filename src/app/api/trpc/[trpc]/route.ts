@@ -1,6 +1,6 @@
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 
-import { appRouter } from '@flowerchild/server';
+import { appRouter } from '@flowerchild/trpc';
 
 const handler = (req: Request) =>
   fetchRequestHandler({

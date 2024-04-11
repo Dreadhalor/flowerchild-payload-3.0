@@ -1,5 +1,4 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
-// import { payloadCloud } from '@payloadcms/plugin-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'; // editor-import
 import path from 'path';
 import { cloudStorage } from '@payloadcms/plugin-cloud-storage';

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '../globals.css';
 import { Provider } from '@flowerchild/trpc/provider';
 import { Toaster } from '@flowerchild/components/ui/sonner';
 import { cn } from '@flowerchild/lib/utils';

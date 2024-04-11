@@ -18,6 +18,9 @@ export interface Config {
     'payload-migrations': PayloadMigration;
   };
   globals: {};
+  user: User & {
+    collection: 'users';
+  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -25,7 +28,6 @@ export interface Config {
  */
 export interface User {
   id: string;
-  role: 'admin' | 'user';
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -33,11 +35,9 @@ export interface User {
   resetPasswordExpiration?: string | null;
   salt?: string | null;
   hash?: string | null;
-  _verified?: boolean | null;
-  _verificationToken?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
-  password: string | null;
+  password?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -81,6 +81,7 @@ export interface Media {
   updatedAt: string;
   createdAt: string;
   url?: string | null;
+  thumbnailURL?: string | null;
   filename?: string | null;
   mimeType?: string | null;
   filesize?: number | null;

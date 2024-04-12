@@ -9,16 +9,13 @@ export const authRouter = router({
     .input(AuthCredentialsValidator)
     .mutation(async ({ input: { email, password } }) => {
       const payload = await getPayloadClient();
-      if (!payload) {
-        throw new Error('Payload not found');
-      }
 
       // check if user exists
       const { docs } = await payload.find({
         collection: 'users',
         where: {
           email: {
-            equals: email,
+            like: email,
           },
         },
       });
@@ -48,11 +45,8 @@ export const authRouter = router({
 
   signIn: publicProcedure
     .input(AuthCredentialsValidator)
-    .mutation(async ({ input: { email, password }, ctx: { res } }) => {
+    .mutation(async ({ input: { email, password } }) => {
       const payload = await getPayloadClient();
-      if (!payload) {
-        throw new Error('Payload not found');
-      }
 
       try {
         await payload.login({
@@ -61,7 +55,6 @@ export const authRouter = router({
             email,
             password,
           },
-          res,
         });
       } catch (error) {
         throw new TRPCError({

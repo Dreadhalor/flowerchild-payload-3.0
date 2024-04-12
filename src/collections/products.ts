@@ -1,11 +1,11 @@
 import { CollectionBeforeChangeHook, CollectionConfig } from 'payload/types';
-import { Product } from '../payload-types';
-import { stripe } from '../lib/stripe';
+import { Product } from '@flowerchild/payload-types';
+import { stripe } from '@flowerchild/lib/stripe';
 
 const addUser: CollectionBeforeChangeHook<Product> = async ({ data, req }) => {
   const user = req.user;
 
-  return { ...data, user: user.id };
+  return { ...data, user: user?.id };
 };
 
 export const Products: CollectionConfig = {

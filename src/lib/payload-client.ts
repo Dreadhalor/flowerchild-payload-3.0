@@ -16,6 +16,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// transporter.sendMail({
+//   from: {
+//     name: 'FLOWERCHILD',
+//     address: 'hello@flowerchild-fashion.com',
+//   },
+//   to: 'scotthetrick2@gmail.com',
+//   subject: 'Hello',
+//   text: 'Hello world!',
+// });
+
 /**
  * Global is used here to maintain a cached connection across hot reloads
  * in development. This prevents connections growing exponentially
@@ -41,7 +51,7 @@ export const getPayloadClient = async (): Promise<Payload> => {
     cached.promise = getPayload({
       email: {
         transport: transporter,
-        fromAddress: 'onboarding@resend.dev',
+        fromAddress: 'hello@flowerchild-fashion.com',
         fromName: 'FLOWERCHILD',
       },
       config,

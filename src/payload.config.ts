@@ -1,5 +1,5 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
-import { lexicalEditor } from '@payloadcms/richtext-lexical'; // editor-import
+import { slateEditor } from '@payloadcms/richtext-slate';
 import path from 'path';
 import { cloudStorage } from '@payloadcms/plugin-cloud-storage';
 import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3';
@@ -41,7 +41,7 @@ export default buildConfig({
     admin: '/sell',
   },
   collections: [Users, Products, Media, Orders, OrderItems, Categories],
-  editor: lexicalEditor({}),
+  editor: slateEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

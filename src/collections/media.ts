@@ -18,14 +18,14 @@ const isAdminOrHasAccessToImages =
 export const Media: CollectionConfig = {
   slug: 'media',
   hooks: {
-    beforeChange: [({ req, data }) => ({ ...data, user: req.user.id })],
+    beforeChange: [({ req, data }) => ({ ...data, user: req.user?.id })],
   },
   admin: {
     hidden: ({ user }) => user?.role !== 'admin',
   },
   access: {
     read: async ({ req }) => {
-      const referer = req.headers?.referer;
+      const referer = req.headers.get('referer') || '';
 
       if (!req.user || !referer?.includes('sell')) {
         return true;

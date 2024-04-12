@@ -25,9 +25,9 @@ export const Media: CollectionConfig = {
   },
   access: {
     read: async ({ req }) => {
-      const referer = req.headers.get('referer') || '';
+      const pathname = req.pathname || '';
 
-      if (!req.user || !referer?.includes('sell')) {
+      if (!req.user || !pathname.includes('/sell')) {
         return true;
       }
 

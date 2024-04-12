@@ -29,6 +29,7 @@ const adapter = s3Adapter({
 });
 
 export default buildConfig({
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
   admin: {
     user: 'users',
     meta: {

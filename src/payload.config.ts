@@ -4,7 +4,7 @@ import path from 'path';
 import { cloudStorage } from '@payloadcms/plugin-cloud-storage';
 import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3';
 import { buildConfig } from 'payload/config';
-// import sharp from 'sharp'
+import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 
 import { Users } from './collections/users';
@@ -59,12 +59,11 @@ export default buildConfig({
       },
     }),
   ],
+  sharp,
   // Sharp is now an optional dependency -
   // if you want to resize images, crop, set focal point, etc.
   // make sure to install it and pass it to the config.
 
   // This is temporary - we may make an adapter pattern
   // for this before reaching 3.0 stable
-
-  // sharp,
 });

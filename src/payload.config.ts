@@ -37,6 +37,9 @@ export default buildConfig({
       ogImage: '/thumbnail.jpg',
     },
   },
+  routes: {
+    admin: '/sell',
+  },
   collections: [Users, Products, Media, Orders, OrderItems, Categories],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',

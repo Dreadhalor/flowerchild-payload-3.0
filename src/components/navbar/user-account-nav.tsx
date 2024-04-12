@@ -31,7 +31,9 @@ export const UserAccountNav = ({ user: { email } }: Props) => {
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <Link href='/sell'>Seller Dashboard</Link>
+          <Link href='/sell' className='cursor-pointer'>
+            Seller Dashboard
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className='cursor-pointer' onClick={signOut}>
           Log Out

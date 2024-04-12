@@ -9,8 +9,6 @@ export const getServerSideUser = async (
 ) => {
   const token = cookies.get('payload-token')?.value;
 
-  return { user: null };
-
   const self = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/me`,
     {

@@ -36,6 +36,10 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'localhost',
       },
+      {
+        protocol: 'https',
+        hostname: process.env.NEXT_PUBLIC_SERVER_URL,
+      },
     ],
   },
 };

@@ -2,8 +2,6 @@ import { User } from '@flowerchild/payload-types';
 import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies';
 import { NextRequest } from 'next/server';
 
-// export const getPayload = async () => {
-
 export const getServerSideUser = async (
   cookies: NextRequest['cookies'] | ReadonlyRequestCookies,
 ) => {

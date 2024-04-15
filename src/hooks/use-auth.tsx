@@ -14,6 +14,8 @@ export const useAuth = () => {
           headers: {
             'Content-Type': 'application/json',
           },
+          // Payload 3.0 beta has a bug where it expects a body for no reason when logging out
+          body: JSON.stringify({}),
         },
       );
 

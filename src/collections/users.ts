@@ -8,20 +8,6 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   auth: true,
-  // auth: {
-  //   verify: {
-  //     generateEmailHTML: ({ token, user }) => {
-  //       console.log('token', token);
-  //       console.log('user', user);
-  //       return `
-  //         <div>
-  //           <p>Click the link below to verify your email address:</p>
-  //           <a href="${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}">Verify Email</a>
-  //         </div>
-  //       `;
-  //     },
-  //   },
-  // },
   hooks: {
     beforeChange: [
       async (args) => {

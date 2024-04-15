@@ -11,6 +11,7 @@ import { getServerSideUser } from '@flowerchild/lib/payload-utils';
 import { cookies } from 'next/headers';
 import { UserAccountNav } from './user-account-nav';
 import { NavigationMenu, NavigationMenuList } from '../ui/navigation-menu';
+// import { SignIn } from './sign-in-button';
 
 export const Navbar = async () => {
   const nextCookies = cookies();
@@ -58,6 +59,8 @@ export const Navbar = async () => {
                     <Separator className='h-6' orientation='vertical' />
                   </>
                 )}
+
+                {/* <SignIn /> */}
 
                 {user && (
                   <>
